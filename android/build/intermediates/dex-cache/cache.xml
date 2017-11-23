@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/classes-6975b4def91fba3f41121998077b9aff01a7fe71.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.41.2/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b49a04a3016689b372ecbb77f0c33e486e768cca">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/classes-64b4da4d3f18a83117639bcc6cb6f45948ac5527.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/classes-6e686561ad6e415ca8412863997ed0eb010b57a9.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/classes-b01b8bdcef675d2978646b5428db9b56bb3f49ed.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.1/c7c4f9e35c2fd5900da24f9872e3971801f08ce0/okhttp-3.4.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/okhttp-3.4.1-c5ff7f7bc5fab6cfa99af1fe6732fef84b64c2bb.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/classes-ea47a718aeeb61c322c4f48a13a12baf306c1dc5.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-ws/3.4.1/8ace66ef7002d98f633377c9e67daeeb196d8c3b/okhttp-ws-3.4.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8ace66ef7002d98f633377c9e67daeeb196d8c3b">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/okhttp-ws-3.4.1-5ff4747eb68f1f6736e3acf010cc37c1db8c6bce.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.41.2/jars/libs/infer-annotations-1.5.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="dcac634e137395f79693ec760f081a86eb2bd84e">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/infer-annotations-1.5-67d5d3cd5d5501f7fe33a79c02df3438ed691474.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/support-annotations-23.4.0-c5a5f524cffba90844a9a757a7798d8bd51edaa4.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0-649994d15d4d2d9819f935521464166f0ec64c97.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1137942adeb03984c1311b662363dd38fc238fd3">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/classes-460177366d2d78185a14ca6e63ab3ef8f54481f7.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ca63c521b5745ae9a09629d7ca67ff6bc2a967fe">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/classes-d8c2de3d4f49d3dc1782fc077ff2a400434f78b4.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0-9e8dd2be420b21b6f783dc4ce15a864df2745017.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.9.0/f824591a0016efbaeddb8300bee54832a1398cfa/okio-1.9.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/okio-1.9.0-1dd15b2c5d3f427fd4f4c573b321ef958976cc99.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/javax.inject-1-1cd83139f81259c1708866d9b6c03a34ff7dcebd.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0-225a55df60683c8b10ba8724e06734ab74c2fdb9.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="2b8a01ad9da5d26d0067894c22e87597bca2c500">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/classes-6a0a679d1b7ea8a9937d48a54443abc8047da021.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/internal_impl-23.4.0-872895f714c7a6e540ab1789143c5ea401ae37be.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.4.1/63994437f62bc861bc20c605d12962f7246116d1/okhttp-urlconnection-3.4.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="63994437f62bc861bc20c605d12962f7246116d1">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.4.1-2b702ea845f5012fcdd620e8d1ae95a2ae9d81af.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/library-2.4.0-be1f2fd67104692a923ea9a7c4a11447cc87756e.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/classes-8af88bc7777f231282b5e67d668357d7f487d9a5.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d31aadf33187c37a7cd63dc1b769f8c6e33f78c3">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/classes-fcd740163915b86710e1b034a6f96931e5bf6364.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="98786c1770b531b9194fb6448b2a2692c64074b6">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/classes-b85d835df8e0e82d61eb9262a5e84d66235e2521.jar" />
+    </item>
+    <item
+        jar="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.11.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3341b66c54367e777a0647e2db96c045329bfeab">
+        <dex dex="/Users/Flash/Desktop/PicuniReactNative/android/app/build/intermediates/pre-dexed/debug/classes-06c471512f73ffbc2868965dd75c5c9495d86210.jar" />
+    </item>
+
+</items>

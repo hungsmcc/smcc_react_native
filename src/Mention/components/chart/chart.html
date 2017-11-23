@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		.well {
+			padding: 20px;
+			background-color: #fffffe;
+			-webkit-background-clip: padding-box;
+			-moz-background-clip: padding;
+			background-clip: padding-box;
+			margin-bottom: 20px;
+			box-shadow: 0 1px 2px rgba(0,0,0,.1);
+			position: relative;
+		}
+	</style>
+</head>
+<body>
+	<div id="chart_main" class="well"></div>
+	<div id="source_main" class="well"></div>
+	<div id="sentiment_main" class="well"></div>
+	<div id="ScriptHolder"></div>
+	<script src="jquery.js"></script>
+	<script src="highcharts.js"></script>
+
+	<script>
+        function test() {
+            if (WebViewBridge) {
+                WebViewBridge.onMessage = function (message) {
+                    objectInfo = JSON.parse(message);
+                    alert(message);
+                    var callChartApi = 'http://orm.vn:2930' + "/ChartApi.aspx?key=[{'main_keyword':'smcc','require_keywords':'','exclude_keywords':''}]&username=admin@orm.vn&pass=1b4727a96eb05921e68228341642b529";
+                    var getChartDataExport = document.createElement('script');
+                    getChartDataExport.setAttribute('id', 'jsonScript');
+                    getChartDataExport.setAttribute('type', 'text/javascript');
+                    getChartDataExport.setAttribute('src', callChartApi);
+                    document.getElementById('ScriptHolder').appendChild(getChartDataExport);
+                    //uploadCanvasAsImage(objectInfo);
+                    WebViewBridge.send("got the message inside webview");
+                };
+                WebViewBridge.send("hello from webview");
+            }
+        }
+
+		function chart_callback(data) {
+			console.log(data);
+		    chart_data = data;
+
+		    mentionData = getCountPerDayData(data["charts"], "mention");
+		    //hàm vẽ chart
+		    DrawMentionsChart(mentionData, data);
+				Sourcechart(data["charts"]["tab_results_count"]);
+
+				a = data["charts"]["chart_sentiment"]["sentiment_positive_count_per_day"];
+				b = data["charts"]["chart_sentiment"]["sentiment_negative_count_per_day"];
+				negative = 0;
+				positive = 0;
+				for (i = 0; i < Object.keys(a).length; i++) {
+					site = Object.keys(a)[i];
+					positive += a[site];
+				}
+
+				for (i = 0; i < Object.keys(b).length; i++) {
+					site = Object.keys(b)[i];
+					negative += b[site];
+				}
+
+				Sentimentchart(negative, positive);
+		}
+
+		function DrawMentionsChart(mentionData, data) {
+		    $("#chart_main").children().remove();
+		    mentionschart = new Highcharts.Chart({
+		        chart: {
+		            type: 'line',
+		            width: null,
+		            height: 210,
+		            spacingTop: 30,
+		            spacingLeft: 10,
+		            renderTo: 'chart_main'
+		        },
+		        legend: {
+		            align: 'left',
+		            verticalAlign: 'top',
+		            x: 30,
+		            y: -25,
+		            floating: true,
+		        },
+		        title: {
+		            text: "",
+		            x: -20 //center
+		        },
+		        credits: {
+		            enabled: false
+		        },
+		        exporting: {
+		            enabled: false
+		        },
+		        plotOptions: {
+		            series: {
+		                marker: {
+		                    enabled: false
+		                },
+		                dataLabels: {
+		                    enabled: true,
+		                    y: -5,
+		                    useHTML: true,
+		                    formatter: function () {
+		                        if (this.point.options.showLabel) {
+		                            return $('<div/>').css({
+		                                'color': '#FFF',
+		                                'border': this.series.color,
+		                                'backgroundColor': this.series.color,
+		                                'padding': 5,
+		                            }).text(this.y)[0].outerHTML;
+
+		                        }
+		                        return null;
+		                    }
+		                },
+		                animation: {
+		                    duration: 2000,
+		                    easing: 'easeOutBounce'
+		                },
+		                cursor: 'pointer',
+		            }
+		        },
+		        xAxis: {
+		            gridLineDashStyle: 'dot',
+		            gridLineColor: '#E1E1E1',
+		            gridLineWidth: 1,
+		            type: 'datetime',
+		            labels: {
+		                formatter: function () {
+		                    return Highcharts.dateFormat('%e %b', this.value);
+		                }
+		            },
+		        },
+		        yAxis: [{
+		            title: {
+		                text: ''
+		            },
+		            lineWidth: 0,
+		        }, {
+		            title: {
+		                text: ''
+		            },
+		            lineWidth: 0,
+		            opposite: true
+		        }],
+		        tooltip: {
+		            borderRadius: 10,
+		            borderColor: '#24E6B1',
+		            crosshairs: true,
+		            shared: true,
+		            useHTML: true,
+		            headerFormat: '<table>',
+		            pointFormat: '<tr><td style="color: {series.color};font-size:12px;font-family: Arial, Helvetica;text-transform: uppercase;">{series.name}: </td></tr>' +
+		                '<tr><td style="color: {series.color};font-size:11px;font-family: Arial, Helvetica;"><small>{point.x:%Y-%m-%d %H:%M:%S}</small></td></tr>' +
+		                '<tr><td style="color: {series.color};font-size:20px;font-family: Arial, Helvetica;padding-top:10px;padding-bottom:10px;"><b>{point.y}</b><br></td></tr>',
+		            footerFormat: '</table>',
+		        },
+		        series: [{
+		            name: "Mention",
+		            data: mentionData,
+		            color: '#0077CC',
+		            lineWidth: 3,
+		            marker: {
+		                enabled: false,
+		                symbol: 'circle'
+		            }
+		        }]
+		    });
+		}
+
+		function Sourcechart(source_data) {
+			console.log(source_data);
+	  	$("#source_main").children().remove();
+      $('#source_main').highcharts({
+	      chart: {
+	          plotBackgroundColor: null,
+	          plotBorderWidth: 0,
+	          plotShadow: false,
+	          height: null,
+	          width: null
+	      },
+	      title: {
+	          text: ""
+	      },
+	      exporting: {
+	          enabled: false
+	      },
+	      credits: {
+	          enabled: false
+	      },
+	      legend: {
+	          labelFormat: '{name} ({percentage:.1f}%)',
+	          align: 'left',
+	          verticalAlign: 'middle',
+	          layout: 'vertical'
+	      },
+	      tooltip: {
+	          formatter: function () {
+	              return '<b>' + this.point.name + '</b>: ' + this.y + ' %';
+	          }
+	      },
+	      plotOptions: {
+	          pie: {
+	              allowPointSelect: true,
+	              cursor: 'pointer',
+	              dataLabels: {
+	                  enabled: false,
+
+	              },
+	              showInLegend: true,
+	          }
+	      },
+	      series: [{
+
+	          type: 'pie',
+	          name: 'Browser share',
+	          innerSize: '70%',
+	          data: [
+	              ["News", parseFloat(source_data["Blog"]["count"])],
+	              ["User Post", parseFloat(source_data["User Post"]["count"])],
+	              ['Fanpage Post', parseFloat(source_data["Fanpage Post"]["count"])],
+	              ["Group Post", parseFloat(source_data["Group Post"]["count"])],
+	              ["Comment", parseFloat(source_data["Comment"]["count"])],
+	              ["Blog", parseFloat(source_data["Blog"]["count"])]
+	          ]
+	      }],
+	  	});
+		}
+
+		function Sentimentchart(negative, positive) {
+	  	$("#sentiment_main").children().remove();
+      $('#sentiment_main').highcharts({
+	      chart: {
+	          plotBackgroundColor: null,
+	          plotBorderWidth: 0,
+	          plotShadow: false,
+	          height: null,
+	          width: null
+	      },
+	      title: {
+	          text: ""
+	      },
+	      exporting: {
+	          enabled: false
+	      },
+	      credits: {
+	          enabled: false
+	      },
+	      legend: {
+	          labelFormat: '{name} ({percentage:.1f}%)',
+	          align: 'left',
+	          verticalAlign: 'middle',
+	          layout: 'vertical'
+	      },
+	      tooltip: {
+	          formatter: function () {
+	              return '<b>' + this.point.name + '</b>: ' + this.y + ' %';
+	          }
+	      },
+	      plotOptions: {
+	          pie: {
+	              allowPointSelect: true,
+	              cursor: 'pointer',
+	              dataLabels: {
+	                  enabled: false,
+
+	              },
+	              showInLegend: true,
+	          }
+	      },
+	      series: [{
+
+	          type: 'pie',
+	          name: 'Browser share',
+	          innerSize: '70%',
+	          data: [
+	              ["Negative", parseFloat(negative)],
+	              ["Positive", parseFloat(positive)]
+	          ]
+	      }],
+	  	});
+		}
+
+		function getCountPerDayData(ydata, type) {
+		    yaxisdata = [];
+
+		    switch (type) {
+		        case "mention":
+		            if (ydata["chart_main"] == null) {
+		                diff = calculateDaysBetweenDate($("#date1").val(), $("#date2").val());
+		                current_date = new Date($("#date2").val());
+		                if (diff <= 30) {
+		                    for (i = 0; i < diff; i += 2) {
+		                        dt = [];
+		                        var from = new Date(current_date.getFullYear(), current_date.getMonth(), current_date.getDate() + 2);
+		                        current_date = from;
+		                        dt.push(Date.UTC(from.getFullYear(), parseInt(from.getMonth()) - 1, from.getDate()));
+		                        dt.push(0);
+
+		                        yaxisdata.push(dt);
+		                    }
+		                } else {
+		                    for (i = 0; i < diff; i += 30) {
+		                        dt = [];
+		                        var from = new Date(current_date.getFullYear(), current_date.getMonth(), current_date.getDate() + 30);
+		                        current_date = from;
+		                        dt.push(Date.UTC(from.getFullYear(), parseInt(from.getMonth()) - 1, from.getDate()));
+		                        dt.push(0);
+
+		                        yaxisdata.push(dt);
+		                    }
+		                }
+		            } else {
+		                b = ydata["chart_main"]["pages_count_per_day"];
+		                for (i = 0; i < Object.keys(b).length; i++) {
+		                    day = Object.keys(b)[i];
+		                    dt = [];
+		                    dt.push(Date.parse(day.replace("+07:00", "")));
+		                    dt.push(b[day]);
+		                    yaxisdata.push(dt);
+		                }
+		            }
+		            break;
+		    }
+
+		    return yaxisdata;
+		}
+	</script>
+</body>
+</html>
